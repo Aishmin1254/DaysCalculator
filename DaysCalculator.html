@@ -1,0 +1,60 @@
+<html>
+        <body><html>
+<head>
+        <title>Codeyoung:calculate days between dates</title>
+        </head>
+        <body>
+           <hr>
+           <center>
+            <h2>calculate:days between dates.</h2>
+            <br><br></h2>
+            <p align="center"> <b> Enterdate1 </b>
+            <input type="date" id="dateInput1"> 
+            <br><br>
+            <b> Enter date2 </b>
+            <input type="date" id="dateInput2">
+            <br><br>
+            <button onclick="daysDifference()">
+                    calculate number of days
+            </button>
+           </center>
+           <hr>
+           <h2 style="color:violet" id="result" align="center"></h2>
+           <hr>
+        </body>
+</html>
+        </body>
+        <style>body{
+    background-color: purple;
+}
+h2{
+    color:plum;
+    background-color: black;
+}
+p{
+    color:violet;
+    background-color: black;
+}</style>
+        <script>function daysDifference() {
+//define two variables and fetch the input from HTML form
+var dateI1 = document.getElementById("dateInput1").value;
+var dateI2 = document.getElementById("dateInput2").value;
+
+//define two data object variables to store the data values
+var date1 = new Date(dateI1);
+var date2 = new Date(dateI2);
+
+//calculate time difference
+var time_difference = date2.getTime() - date1.getTime();
+
+
+//calculate days difference by dividing total millseconds
+var result =time_difference / (1000 * 60 * 60 *24);
+
+
+return document.getElementById("result").innerHTML=
+result + "days between both dates. ";
+}
+
+</script>
+      </html>
